@@ -1,0 +1,22 @@
+{
+    "easy": {
+        "attempts": 10,
+        "range": 50
+    },
+    "medium": {
+        "attempts": 10,
+        "range": 100
+    },
+    "hard": {
+        "attempts": 10,
+        "range": 200
+    },
+    "extreme": {
+        "attempts": 5,
+        "range": 500
+    },
+    "nightmare": {
+        "attempts": 5,
+        "range": 1000
+    }
+}
