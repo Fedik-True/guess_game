@@ -1,3 +1,6 @@
+# ==== Difficulty config ====
+# ===========================
+
 import json
 from pathlib import Path
 
