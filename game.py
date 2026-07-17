@@ -7,7 +7,7 @@ from difficulty import difficulties, difficulty_map
 
 
 class Game:
-    """A game model with the basic logic."""
+    """Whole game's logic and conditions."""
 
     def __init__(self):
         """initializes the instance's attributes."""
@@ -30,7 +30,7 @@ class Game:
                 print("Enter a number.")
 
     def game_over(self):
-        """Logic behind reaching a maximum of attempts."""
+        """Reaching a maximum of attempts."""
         if self.attempts >= self.max_attempts:
             print("\tOut of attempts!")
             return True
@@ -38,7 +38,7 @@ class Game:
             return False
 
     def hint(self, guess):
-        """Output depending on input."""
+        """Hint on wrong input."""
         if guess < self.answer:
             print("Too low! Jezz again!")
         elif guess > self.answer:
@@ -64,7 +64,7 @@ class Game:
         return self.answer
 
     def reset_game(self):
-        """Resets object's config."""
+        """Resets game's config attributes."""
         self.attempts = 0
         self.history.clear()
         self.generate_answer()
@@ -125,6 +125,7 @@ class Game:
                 self.show_history()
                 if self.another_one():
                     self.reset_game()
+                    self.choose_difficulty()
                     continue
                 else:
                     break
@@ -132,6 +133,7 @@ class Game:
                 print(f"The answer was '{self.answer}'")
                 if self.another_one():
                     self.reset_game()
+                    self.choose_difficulty()
                     continue
                 else:
                     break
